@@ -18,10 +18,10 @@ app.use((req, res, next) =>{
 });
 
 //define error-handling middleware last
-appp.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
     return res.status(error.statusCode || 500).json({
         message: error.message || "Internet Server Error",
     });
-})
+});
 
 module.exports = app;
