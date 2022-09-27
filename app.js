@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const contactRouter  =require("./app/routes/contact_route")
-const apiError = require("./app/apiError")
+const contactRouter  =require("./app/routes/contact_route");
+const apiError = require("./app/apiError");
 
 const app = express();
 
@@ -19,8 +19,8 @@ app.use((req, res, next) =>{
 
 //define error-handling middleware last
 app.use((err, req, res, next) => {
-    return res.status(error.statusCode || 500).json({
-        message: error.message || "Internet Server Error",
+    return res.status(err.statusCode || 500).json({
+        message: err.message || "Internet Server Error",
     });
 });
 
