@@ -14,7 +14,7 @@ class ContactService {
             favorite: payload.favorite
         }
         //remove undefined fields
-        Objects.keys(contact).forEach(
+        Object.keys(contact).forEach(
             (key) => contact[key] === undefined && delete contact[key]
         );
         return contact;
@@ -35,9 +35,9 @@ class ContactService {
         return await cursor.toArray();
     }
 
-    async findByName(){
+    async findByName(name){
         return await this.find({
-            name: {$regex: new RegExp(name), $options: "i"}
+            name: {$regex: new RegExp(name), $options: "i"},
         });
     }
 
