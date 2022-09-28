@@ -53,6 +53,7 @@ exports.findOne = async (req, res, next) => {
         );
     }
 };
+
 exports.update = async (req, res, next) => {
     if (Object.keys(erq.body).length === 0) {
         return next(
@@ -74,6 +75,7 @@ exports.update = async (req, res, next) => {
         );
     }
 };
+
 exports.delete = async (req, res, next) => {
     try {
         const contactService = new ContactService(MongoDB.client);
@@ -90,6 +92,7 @@ exports.delete = async (req, res, next) => {
         );
     }
 };
+
 exports.deleteAll = async (req, res, next) => {
     try {
         const contactService = new ContactService(MongoDB.client);
