@@ -13,7 +13,7 @@ router.route("/favorite")
 
 router.route("/:id")
     .get(contact.findOne)
-    .post(contact.update)
+    .put(contact.update)
     .delete(contact.delete);
 
 module.exports = router;
