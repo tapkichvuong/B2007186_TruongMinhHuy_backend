@@ -55,7 +55,7 @@ exports.findOne = async (req, res, next) => {
 };
 
 exports.update = async (req, res, next) => {
-    if (Object.keys(erq.body).length === 0) {
+    if (Object.keys(req.body).length === 0) {
         return next(
             new apiError(400, "Date to update can not be empty")
         );
